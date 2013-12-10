@@ -1,0 +1,240 @@
+\documentclass{article}
+
+
+\usepackage{graphicx}
+\usepackage[latin1]{inputenc}
+\usepackage[spanish,es-tabla]{babel}
+
+\usepackage[font=footnotesize,caption=false,farskip=0mm,captionskip=0mm,nearskip=0mm]{subfig}
+
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{cite}
+\usepackage{supertabular}
+\usepackage{anysize}
+\marginsize{2.5cm}{2.5cm}{2.5cm}{2.5cm}
+\usepackage{psfrag}
+
+\usepackage[table]{xcolor}
+\usepackage{color}
+\usepackage[font=footnotesize,caption=false,farskip=0mm,captionskip=0mm,nearskip=0mm]{subfig}
+\usepackage{dsfont}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{multirow}
+\usepackage{gensymb}
+\setlength\parindent{0pt}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{Ayudantía de ingeniería de Software}
+\chead{}
+\rhead{2° Sem. 2013}
+
+\hyphenation{in-te-rrup-tor}
+
+\marginsize{2.5cm}{2.5cm}{2.5cm}{2.5cm}
+%\topmargin=-1cm
+\setlength{\unitlength}{1 cm} %Especificar unidad de trabajo
+
+\begin{document}
+\thispagestyle{empty}
+%\begin{picture}(18,4)
+%\put(0,0){\includegraphics[width=3cm,height=4cm]{uco.jpg}}
+%\put(11.5,0){\includegraphics[width=4cm,height=4cm]{eupinf.jpg}}
+%\end{picture}
+%\\
+%\\
+\begin{flushleft}
+\textsc{Universidad Tecnológica Metropolita\\Departamento de Informática\\Ayudantía de ingeniería de Software}
+\end{flushleft}
+\vspace{50mm}
+\begin{center}
+\textbf{\Huge Patrones de Diseño de Software }\\
+\vspace{5mm}
+\end{center}
+\vspace{70mm}
+\begin{flushleft}
+
+\vspace{5mm}
+\textbf{Alumnos:}\\
+\hspace{1cm}
+David Martinez\\
+\hspace{1cm}
+Nicolas Paez\\
+\hspace{1cm}
+Ronald Verdugo\\
+\textbf{Ayudante:}\\
+\hspace{1cm}
+Cristian Garrido\\
+
+\textbf{12 de Diciembre de 2013}
+\end{flushright}
+
+\newpage
+
+
+
+\textbf{¿Qué es un Patrón de Diseño?}\\
+
+ 
+“Los patrones de diseño son el esqueleto de las soluciones a problemas comunes en el desarrollo de software.”
+
+En otras palabras, brindan una solución ya probada y documentada a problemas de desarrollo de software que están sujetos a contextos similares. Debemos tener presente los siguientes elementos de un patrón: su nombre, el problema (cuando aplicar un patrón), la solución (descripción abstracta del problema) y las consecuencias (costos y beneficios).
+
+Existen varios patrones de diseño popularmente conocidos, los cuales se clasifican como se muestra a continuación:
+
+\begin{enumerate}
+\begin{itemize}
+	\item \textbf{Patrones Creacionales:} Inicialización y configuración de objetos.
+\end{itemize}
+
+\begin{itemize}
+	\item \textbf{Patrones Estructurales:} Separan la interfaz de la implementación. Se ocupan de cómo las clases y objetos se agrupan, para formar estructuras más grandes.
+\end{itemize}
+
+\begin{itemize}
+	\item \textbf{Patrones de Comportamiento: }Más que describir objetos o clases, describen la comunicación entre ellos.
+\end{itemize}
+
+Veamos un poco en qué consisten los distintos tipos de patrones, cuáles son sus fines y qué beneficios nos aportan.
+
+\item \textbf{Patrones Creacionales}\\
+
+\textbf{Fábrica Abstracta ( Abstract Factory )}
+
+El problema a solucionar por este patrón es el de crear diferentes familias de objetos, como por ejemplo la creación de interfaces gráficas de distintos tipos (ventana, menú, botón, etc.).\\
+
+\textbf{Método de Fabricación(Factory Method)}
+
+Parte del principio de que las subclases determinan la clase a implementar.
+
+\textbf{Prototipado (Prototype)}
+
+Se basa en la clonación de ejemplares copiándolos de un prototipo.\\
+
+\textbf{Singleton}
+
+Restringe la instanciación de una clase o valor de un tipo a un solo objeto.\\
+
+\textbf{MVC (Model View Controler)}
+
+Este patrón plantea la separación del problema en tres capas: la capa model, que representa la realidad; la capa controler , que conoce los métodos y atributos del modelo, recibe y realiza lo que el usuario quiere hacer; y la capa vista, que muestra un aspecto del modelo y es utilizada por la capa anterior para interaccionar con el usuario.\\
+
+\item \textbf{Patrones Estructurales}\\
+
+\begin{itemize}
+	\item Adaptador (Adapter): Convierte una interfaz en otra.
+\end{itemize}
+
+\begin{itemize}
+	\item Puente (Bridge): Desacopla una abstracción de su implementación permitiendo modificarlas independientemente.
+\end{itemize}
+
+\begin{itemize}
+	\item Objeto Compuesto (Composite): Utilizado para construir objetos complejos a partir de otros más simples, utilizando para ello la composición recursiva y una estructura de árbol.
+\end{itemize}
+
+\begin{itemize}
+	\item Envoltorio (Decorator): Permite añadir dinámicamente funcionalidad a una clase existente, evitando heredar sucesivas clases para incorporar la nueva funcionalidad.
+\end{itemize}
+
+\begin{itemize}
+	\item Fachada (Facade): Permite simplificar la interfaz para un subsistema.
+\end{itemize}
+
+\begin{itemize}
+	\item Peso Ligero (Flyweight): Elimina la redundancia o la reduce cuando tenemos gran cantidad de objetos con información idéntica.
+\end{itemize}
+
+\begin{itemize}
+	\item \textbf{Proxy (Este Patron se detallará):} Un objeto se aproxima a otro.
+
+El patrón proxy se usa cuando se necesita una referencia a un objeto más flexible o sofisticada que un puntero. Dependiendo de la función que se desea realizar con dicha referencia podemos distinguir diferentes tipos de proxies:\\
+
+\textbf{proxy remoto:} representante local de un objeto remoto.\\
+\textbf{proxy virtual:} crea objetos costosos bajo demanda (como la clase ImagenProxy en el ejemplo de motivación).\\
+\textbf{proxy de protección:} controla el acceso al objeto original.\\
+\textbf{proxy de referencia inteligente:} sustituto de un puntero que lleva a cabo operaciones adicionales cuando se accede a un objeto (ej. contar número de referencias al objeto real, cargar un objeto persistente bajo demanda en memoria, control de concurrencia de acceso tal como bloquear el objeto para impedir acceso concurrente, …).\\
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=300pt]{proxy.jpg}
+\end{figure}
+
+\end{itemize}
+
+\item \textbf{Patrones de Comportamiento}\\
+
+\begin{itemize}
+	\item Cadena de responsabilidad (Chain of responsibility): La base es permitir que más de un objeto tenga la posibilidad de atender una petición.
+\end{itemize}
+
+\begin{itemize}
+	\item Orden (Command): Encapsula una petición como un objeto dando la posibilidad de “deshacer” la petición.
+\end{itemize}
+
+\begin{itemize}
+	\item Intérprete (Interpreter): Intérprete de lenguaje para una gramática simple y sencilla.
+\end{itemize}
+
+\begin{itemize}
+	\item Iterador (Iterator): Define una interfaz que declara los métodos necesarios para acceder secuencialmente a una colección de objetos sin exponer su estructura interna.
+\end{itemize}
+
+\begin{itemize}
+	\item Mediador (Mediator): Coordina las relaciones entre sus asociados. Permite la interacción de varios objetos, sin generar acoples fuertes en esas relaciones.
+\end{itemize}
+
+\begin{itemize}
+	\item Recuerdo (Memento): Almacena el estado de un objeto y lo restaura posteriormente.
+\end{itemize}
+
+\begin{itemize}
+	\item Observador (Observer): Notificaciones de cambios de estado de un objeto.
+\end{itemize}
+
+\begin{itemize}
+	\item Estado (Server): Se utiliza cuando el comportamiento de un objeto cambia dependiendo del estado del mismo.
+\end{itemize}
+
+\begin{itemize}
+	\item Estrategia (Strategy): Utilizado para manejar la selección de un algoritmo.
+\end{itemize}
+
+\begin{itemize}
+	\item Método plantilla (Template Method): Algoritmo con varios pasos suministrados por una clase derivada.
+\end{itemize}
+
+\begin{itemize}
+	\item Visitante (Visitor): Operaciones aplicadas a elementos de una estructura de objetos heterogénea.\\
+\end{itemize}
+\end{enumerate}
+
+
+\item \textbf{Conclusiones}\\
+
+\begin{itemize}
+	\item Los patrones de diseño describen la solución a problemas que se repiten una y otra vez en nuestros sistemas, de forma que se puede usar esa solución siempre que haga falta.
+\end{itemize}
+
+\begin{itemize}
+	\item Capturan el conocimiento que tienen los expertos a la hora de diseñar.
+\end{itemize}
+
+\begin{itemize}
+	\item Ayudan a generar software “maleable” (software que soporta y facilita el cambio, la reutilización y la mejora).
+\end{itemize}
+
+\begin{itemize}
+	\item Son guías de diseño, no reglas rigurosas.\\
+\end{itemize}
+
+\item \textbf{https://github.com/ronaldvl/AyudantiaSw\_Tareas}\\
+
+
+\end{document}
+
+\end{document} 
